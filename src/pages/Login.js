@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import styled from 'styled-components'
+// import { useNavigate } from 'react-router-dom'
+// import styled from 'styled-components'
 
 export default function Login() {
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
     const [state, setState] = useState({
         email: "",
         password: "",
