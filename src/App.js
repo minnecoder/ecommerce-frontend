@@ -4,6 +4,7 @@ import Register from './pages/Register';
 import Shop from './pages/Shop'
 import VerifyEmail from './pages/VerifyEmail'
 import AwaitEmailVerify from './pages/AwaitEmailVerify';
+import Detail from './pages/Detail'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/verify/:email/:token" element={<VerifyEmail />} />
         <Route path="/awaitemailverify" element={<AwaitEmailVerify />} />
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );
