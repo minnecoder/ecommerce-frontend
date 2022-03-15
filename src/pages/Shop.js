@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 
 export default function Shop() {
     let navigate = useNavigate()
@@ -14,24 +15,38 @@ export default function Shop() {
             })
             const newData = await response.json()
             setProducts(newData.data)
+            console.log(newData.data)
         }
         fetchData()
     }, [])
 
 
     return (
-        <div>
-            {products.map((product, index) => (
-                <div key={product.id} onClick={() => navigate(
+        <Main>
+            {products.map((product) => (
+                <StoreItem key={product.id} onClick={() => navigate(
                     `/detail/${product.id}`,
                     { state: product }
                 )} >
-                    <p>{product.Product_Name}</p>
-                    <p>{product.Product_Desc}</p>
-                    <p>{product.Product_Price}</p>
-                </div>
+                    <img src="https://via.placeholder.com/200" alt="" />
+                    <p>{product.productName}</p>
+                    <p>{product.productDesc}</p>
+                    <p>{product.productPrice}</p>
+                    <input type="button" value="Add to Cart" />
+                </StoreItem>
             ))
             }
-        </div >
+        </Main>
     )
-} 
+}
+
+const Main = styled.div`
+display: flex;
+margin: 0 auto;
+width: 85%;
+`
+
+const StoreItem = styled.div`
+width: 25%;
+border: solid 1px black;
+`

@@ -37,6 +37,7 @@ export default function Register() {
         if (response.status === 200) {
             navigate('/awaitemailverify', { state: { email: state.email } })
         }
+        // TODO add code for login fail
     }
 
     return (
